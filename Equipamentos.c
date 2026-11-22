@@ -6,10 +6,10 @@
 
           // INSERÇÃO ORDENADA (Crescente pelo ID)
 int inserir_equipamento(Equipamento **inicio, Equipamento dados) {
-    // Etapa 1: Alocação
+    // Alocação
     Equipamento *novo = (Equipamento *) malloc(sizeof(Equipamento));
     if (novo == NULL) {
-        return 0; // Falha por falta de memória
+        return 0; //  falha de memória 
     }
 
              //  Preenchimento dos dados
@@ -17,7 +17,7 @@ int inserir_equipamento(Equipamento **inicio, Equipamento dados) {
      strcpy(novo->descricao, dados.descricao); 
     novo->prox = NULL;
 
-    // Etapa 3: Ligação na lista
+    // Ligação na lista
             // a Lista vazia ou novo ID é o menor de todos (vai para o início)
     if (*inicio == NULL || dados.id < (*inicio)->id) {
         novo->prox = *inicio;
@@ -25,20 +25,20 @@ int inserir_equipamento(Equipamento **inicio, Equipamento dados) {
         return 1;
     }
 
-                 //Caminhar pela lista para achar a posição no meio ou final
+    //Caminhar pela lista para achar a posição no meio ou final
     Equipamento *atual = *inicio;
     while (atual->prox != NULL && atual->prox->id < novo->id) {
         atual = atual->prox;
     }
 
-                   // Encaixa o novo equipamento na lista          
+    // encaixa o novo equipamento na lista          
     novo->prox = atual->prox;
     atual->prox = novo;
 
     return 1;
 }
 
-                    // BUSCA DE EQUIPAMENTO
+ // BUSCA DE EQUIPAMENTO
 int buscar_equipamento(Equipamento *inicio, int id_procurado) {
     Equipamento *atual = inicio;
 
@@ -50,7 +50,7 @@ int buscar_equipamento(Equipamento *inicio, int id_procurado) {
         atual = atual->prox; // coloca o atual dando um passo para o prox
     }
 
-    return 0; //significa que  Não encontrou
+    return 0; //significa que não encontrou
 }
 
          //  IMPRESSÃO DA LISTA
@@ -69,7 +69,7 @@ void imprimir_equipamentos(Equipamento *inicio) {
     printf("-----------------------------------------\n");
 }
 
-            // FAXINA (Liberação de Memória)
+            //  liberar memoria 
 void liberar_equipamentos(Equipamento **inicio) {
     Equipamento *atual = *inicio;
     Equipamento *proximo;
