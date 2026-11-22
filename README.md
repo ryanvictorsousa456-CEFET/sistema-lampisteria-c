@@ -35,5 +35,5 @@ O projeto foi modularizado em cabeçalhos (`.h`) e implementações (`.c`), apli
 ### Compilação
 Abra o terminal (CMD, PowerShell ou Bash) dentro da pasta do projeto e execute:
 
-```bash
-gcc -Wall -Wextra main.c Equipamentos.c Solicitacoes.c Operacoes.c historico.c arquivos.c -o lampisteria
+cd /d "C:\Users\Ryan\OneDrive\trabalho Guido 2" && gcc -Wall -Wextra main.c Equipamentos.c Solicitacoes.c Operacoes.c historico.c arquivos.c -o lampisteria && lampisteria.exe
+
